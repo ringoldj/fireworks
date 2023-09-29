@@ -45,7 +45,10 @@ object Firework:
    * style.
    */
   def next(firework: Firework): Firework =
-    ???
+    case class Waiting => Launched.init()
+    case class Launched => Exploding.init()
+    case class Exploding => Done.init()
+    case class Done => firework
 
 end Firework
 
